@@ -1,0 +1,9 @@
+<root>
+    <item
+        name='android.content.ContentResolver android.database.Cursor query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)'>
+        <annotation name='java.lang.Deprecated' />
+        <annotation name='org.jetbrains.annotations.Contract'>
+            <val name="pure" val="true" />
+        </annotation>
+    </item>
+</root>

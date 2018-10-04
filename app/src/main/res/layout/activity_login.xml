@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/ab_sidenavbarcolor"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".activities.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="TODO" android:src="@drawable/logo" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/Layout_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="25dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/layout_login">
+
+                <EditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@drawable/ic_button_style"
+                    android:hint="@string/hint_Email"
+                    android:inputType="textEmailAddress"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/Fontcolor"
+                    android:textSize="10dp" />
+
+                <EditText
+                    android:id="@+id/edt_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/edt_email"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/ic_button_style"
+                    android:hint="@string/hint_password"
+                    android:inputType="textPassword"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/Fontcolor"
+                    android:textSize="10dp" />
+
+                <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="140dp"
+                    android:background="@drawable/ic_button_style"
+                    android:elevation="100dp"
+                    android:text="@string/Btn_login" />
+
+                <TextView
+                    android:id="@+id/tv_singup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btn_login"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="15dp"
+                    android:clickable="true"
+                    android:focusable="true" android:text="@string/txt_Sinup"
+                    android:textAllCaps="true"
+                    android:textColor="@color/Button_color"
+                    android:textSize="15dp"
+                    android:textStyle="bold"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</ScrollView>

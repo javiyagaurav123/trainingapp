@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.softices.trainingapp">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <activity
+            android:name=".activities.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".activities.ConnectionReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.DashboardActivity"
+            android:label="@string/title_activity_dashboard"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity
+            android:name=".activities.AccountDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity android:name=".activities.ServicesActivity" />
+        <activity
+            android:name=".activities.ListofUserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopupOverlay" />
+
+        <service
+            android:name=".services.MyService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopupOverlay" />
+
+        <activity
+            android:name=".activities.AllContactActivity"
+            android:enabled="true"
+            android:exported="true"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity
+            android:name=".activities.ToolsOptionActivity"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <!-- <activity android:name=".activities.WebServicesActivity" /> -->
+        <activity
+            android:name=".activities.UpdateActivity"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity
+            android:name=".activities.WebServiceActivity"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity android:name=".activities.BroadcastReceiverActivity" />
+        <activity android:name=".activities.GetActivity" />
+        <activity android:name=".activities.PutActivity" />
+        <activity android:name=".activities.PostActivity" />
+        <activity android:name=".activities.DeleteActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/Backgroundcolor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".activities.PutActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_delete"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/Button_color"
+        android:gravity="center"
+        android:textAlignment="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="DELETE"
+            android:textColor="@color/Backgroundcolor"
+            android:textSize="25dp" />
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:textColor="@color/Fontcolor"
+        android:textSize="20dp" />
+    <TextView
+        android:id="@+id/tv_domain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="job:"
+        android:textColor="@color/Fontcolor"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Fontcolor"
+        android:textColorHint="@color/Fontcolor"
+        android:hint="Enter name"/>
+    <EditText
+        android:id="@+id/edt_domain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Fontcolor"
+        android:textColorHint="@color/Fontcolor"
+        android:hint="Enter Domain"/>
+    <Button
+        android:id="@+id/btn_parsedata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Data"
+        android:background="@drawable/button_roundshap"/>
+
+</LinearLayout>

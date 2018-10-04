@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/ab_sidenavbarcolor"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".activities.UpdateActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edt_update_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User Name"
+            android:inputType="" android:textColor="@color/cardview_dark_background"/>
+
+        <EditText
+            android:id="@+id/edt_update_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User Email"
+            android:inputType="" android:textColor="@color/cardview_dark_background"/>
+
+        <EditText
+            android:id="@+id/edt_update_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User Number"
+            android:inputType="" android:textColor="@color/cardview_dark_background"/>
+
+        <EditText
+            android:id="@+id/edt_update_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User Password"
+            android:inputType="" android:textColor="@color/cardview_dark_background"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_update_savechange"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_roundshap"
+            android:text="Save Change"
+            android:textColor="@color/Backgroundcolor"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+</LinearLayout>

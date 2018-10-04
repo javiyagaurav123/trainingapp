@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview_service"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme.PopupOverlay"
+    android:background="@color/Backgroundcolor"
+    tools:context=".activities.ServicesActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_user_profile"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/Button_color"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Services"
+        android:textColor="@color/Backgroundcolor"
+        android:layout_marginLeft="70dp"
+        android:textAlignment="center"
+        android:textSize="25dp"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ic_btn_backimage"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="TODO" android:src="@drawable/ic_action_back" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="200dp"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btn_start_services"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_login"
+                android:text="@string/btn_start_services"
+                android:textColor="@color/Backgroundcolor" />
+
+            <Button
+                android:id="@+id/btn_stop_services"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/btn_start_services"
+                android:background="@drawable/layout_login"
+                android:text="@string/btn_stop_services"
+                android:textColor="@color/Backgroundcolor" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
