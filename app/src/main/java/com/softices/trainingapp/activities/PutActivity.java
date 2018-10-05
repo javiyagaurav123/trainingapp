@@ -74,12 +74,11 @@ public class PutActivity extends AppCompatActivity {
         try {
             JSONObject jsonData = new JSONObject(response);
 
-            String name=jsonData.getString("name");
-            String job=jsonData.getString("job");
+            String name = jsonData.getString("name");
+            String job = jsonData.getString("job");
 
             tvName.setText("Name:" + name);
-            tvjob.setText("job:" +job);
-
+            tvjob.setText("job:" + job);
         } catch (Exception e) {
             e.printStackTrace();
         }

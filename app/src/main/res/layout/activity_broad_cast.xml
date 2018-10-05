@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Backgroundcolor"
+    android:orientation="vertical"
+    tools:context=".activities.BroadCastActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/Button_color"
+        android:gravity="center"
+        android:textAlignment="center"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:gravity="center"
+            android:text="BroadCast recevier"
+            android:textColor="@color/Backgroundcolor"
+            android:textSize="25dp" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/tv_batterystatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/Fontcolor"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
+
+    <ProgressBar
+        android:id="@+id/pb_betteryindecatore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@color/Fontcolor"
+        android:minWidth="100dp"
+        android:minHeight="10dp"
+        style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"/>
+</LinearLayout>

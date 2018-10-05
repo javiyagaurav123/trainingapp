@@ -40,13 +40,13 @@ public class ToolsOptionActivity extends AppCompatActivity implements View.OnCli
             Intent intent = new Intent(ToolsOptionActivity.this, DashboardActivity.class);
             startActivity(intent);
         } else if (v == imageBroadcastRecever) {
-            Intent intent = new Intent(ToolsOptionActivity.this, BroadcastReceiverActivity.class);
+            Intent intent = new Intent(ToolsOptionActivity.this, BroadCastActivity.class);
             startActivity(intent);
         }
     }
 
     private void init() {
-        toolbar=findViewById(R.id.toolbar_option);
+        toolbar = findViewById(R.id.toolbar_option);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

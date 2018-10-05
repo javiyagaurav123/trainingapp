@@ -62,7 +62,6 @@
             android:name=".services.MyService"
             android:enabled="true"
             android:exported="true"
-            android:permission=""
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.PopupOverlay" />
 
@@ -70,22 +69,32 @@
             android:name=".activities.AllContactActivity"
             android:enabled="true"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.PopupOverlay" />
         <activity
             android:name=".activities.ToolsOptionActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.PopupOverlay" />
         <!-- <activity android:name=".activities.WebServicesActivity" /> -->
         <activity
+            android:screenOrientation="portrait"
             android:name=".activities.UpdateActivity"
             android:theme="@style/AppTheme.PopupOverlay" />
         <activity
             android:name=".activities.WebServiceActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.PopupOverlay" />
-        <activity android:name=".activities.BroadcastReceiverActivity" />
-        <activity android:name=".activities.GetActivity" />
-        <activity android:name=".activities.PutActivity" />
-        <activity android:name=".activities.PostActivity" />
-        <activity android:name=".activities.DeleteActivity"></activity>
-    </application>
 
+        <activity android:name=".activities.GetActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activities.PutActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activities.PostActivity" />
+
+        <activity android:name=".activities.DeleteActivity" />
+
+        <activity android:name=".activities.BroadCastActivity"/>
+    </application>
 </manifest>
