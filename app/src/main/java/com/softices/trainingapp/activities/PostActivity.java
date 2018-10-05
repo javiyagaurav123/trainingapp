@@ -18,10 +18,12 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.softices.trainingapp.R;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class PostActivity extends AppCompatActivity  {
+public class PostActivity extends AppCompatActivity {
 
     TextView tvName, tvDomain;
     EditText edtName, edtDomain;
@@ -35,7 +37,7 @@ public class PostActivity extends AppCompatActivity  {
 
         init();
 
-        postMethod(edtName.getText().toString(), edtDomain.getText().toString());
+//        postMethod(edtName.getText().toString(), edtDomain.getText().toString());
     }
 
 
@@ -49,7 +51,7 @@ public class PostActivity extends AppCompatActivity  {
                     public void onResponse(String response) {
                         // response
                         Log.e("Response", response);
-
+                        parseData(response);
                     }
                 },
                 new Response.ErrorListener() {
@@ -71,6 +73,21 @@ public class PostActivity extends AppCompatActivity  {
         queue.add(postRequest);
     }
 
+    public void parseData(String response) {
+        try {
+            JSONObject josnData = new JSONObject(response);
+
+            String name = josnData.getString("name");
+            String domain = josnData.getString("domain");
+
+            tvName.setText("name: " + name);
+            tvDomain.setText("domain: " + domain);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void init() {
         tvName = findViewById(R.id.tv_name);
         tvDomain = findViewById(R.id.tv_domain);
@@ -80,7 +97,7 @@ public class PostActivity extends AppCompatActivity  {
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                postMethod(edtName.getText().toString(),edtDomain.getText().toString());
+                postMethod(edtName.getText().toString(), edtDomain.getText().toString());
             }
         });
         toolbarPost = findViewById(R.id.toolbar_post);

@@ -15,6 +15,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.softices.trainingapp.R;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,7 +38,7 @@ public class GetActivity extends AppCompatActivity {
 
 
     public void dataRequest() {
-        String Url = "https://reqres.in/api/users/2";
+        String Url = "https://reqres.in/api/users?page=2";
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
@@ -46,6 +47,7 @@ public class GetActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.e("onResponse", response.toString());
+                        parseData(response);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -56,9 +58,24 @@ public class GetActivity extends AppCompatActivity {
         requestQueue.add(jsonObjectRequest);
     }
 
+    public void parseData(JSONObject response) {
+        try {
+            JSONArray data = response.getJSONArray("data");
+            for (int i = 0; i < data.length(); i++) {
+                JSONObject user = data.getJSONObject(i);
+                String first_Name = user.getString("first_name");
+                String Last_name = user.getString("last_name");
+                tvName.setText("first_Name: " + first_Name);
+                tvLastName.setText("last_name: " + Last_name);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void init() {
         tvName = findViewById(R.id.tv_name);
-        tvLastName = findViewById(R.id.tv_job);
+        tvLastName = findViewById(R.id.tv_lname);
         toolbarGet = findViewById(R.id.toolbar_get);
         setSupportActionBar(toolbarGet);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

@@ -18,7 +18,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.softices.trainingapp.R;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -26,7 +25,7 @@ import java.util.Map;
 
 public class PutActivity extends AppCompatActivity {
 
-    TextView tvName, tvLname;
+    TextView tvName, tvjob;
     EditText edtName, edtJob;
     Toolbar toolbarPut;
     Button btnParseData;
@@ -48,7 +47,8 @@ public class PutActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         // response
-                        Log.e("Response", response.toString());
+                        Log.e("Response", response);
+                        parseData(response);
                     }
                 },
                 new Response.ErrorListener() {
@@ -69,16 +69,18 @@ public class PutActivity extends AppCompatActivity {
         };
         queue.add(putRequest);
     }
-    private void parseData(JSONObject response) {
-        try {
-            JSONObject jsonData = response.getJSONObject("data");
-            int id = jsonData.getInt("id");
-            String firstName = jsonData.getString("first_name");
-            String lastName = jsonData.getString("last_name");
-            tvLname.setText("LastName : " + lastName);
-            tvName.setText("FirstName : " + firstName);
 
-        } catch (JSONException e) {
+    private void parseData(String response) {
+        try {
+            JSONObject jsonData = new JSONObject(response);
+
+            String name=jsonData.getString("name");
+            String job=jsonData.getString("job");
+
+            tvName.setText("Name:" + name);
+            tvjob.setText("job:" +job);
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -86,7 +88,7 @@ public class PutActivity extends AppCompatActivity {
 
     public void init() {
         tvName = findViewById(R.id.tv_name);
-        tvLname = findViewById(R.id.tv_lname);
+        tvjob = findViewById(R.id.tv_lname);
         edtName = findViewById(R.id.edt_name);
         edtJob = findViewById(R.id.edt_job);
         btnParseData = findViewById(R.id.btn_parsedata);
