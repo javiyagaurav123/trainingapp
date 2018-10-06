@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    tools:context=".activities.PutActivity">
+    tools:context=".activities.DeleteActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_delete"

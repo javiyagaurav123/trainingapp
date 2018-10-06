@@ -16,6 +16,11 @@
             android:id="@+id/nav_sevices"
             android:title="Service"
             android:icon="@drawable/ic_services"/>
+        <item
+            android:id="@+id/nav_Camera"
+            android:title="Camera"
+            android:icon="@drawable/ic_menu_camera"/>
+
     </group>
 
     <item android:title="Communicate">

@@ -89,7 +89,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         } else if (id == R.id.nav_sevices) {
             startActivity(new Intent(DashboardActivity.this, ServicesActivity.class));
         } else if (id == R.id.nav_share) {
-
+        } else if (id==R.id.nav_Camera){
+            startActivity(new Intent(DashboardActivity.this,CameraActivity.class));
         } else if (id == R.id.nav_logout) {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
