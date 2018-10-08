@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import com.softices.trainingapp.R;
 
@@ -15,7 +14,6 @@ public class WebServiceActivity extends AppCompatActivity implements View.OnClic
 
     Button btnGet, btnPost, btnPut, btnDelete;
     Toolbar toolbarWebServices;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,22 +34,22 @@ public class WebServiceActivity extends AppCompatActivity implements View.OnClic
         } else if (v == btnPut) {
             Intent intent = new Intent(WebServiceActivity.this, PutActivity.class);
             startActivity(intent);
-        }else if (v==btnDelete){
-            Intent intent=new Intent(WebServiceActivity.this,DeleteActivity.class);
+        } else if (v == btnDelete) {
+            Intent intent = new Intent(WebServiceActivity.this, DeleteActivity.class);
             startActivity(intent);
         }
     }
 
     public void init() {
-        toolbarWebServices=findViewById(R.id.toolbar_web_services);
+        toolbarWebServices = findViewById(R.id.toolbar_web_services);
         setSupportActionBar(toolbarWebServices);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        btnGet = (Button) findViewById(R.id.btn_get);
-        btnPost = (Button) findViewById(R.id.btn_post);
-        btnPut = (Button) findViewById(R.id.btn_put);
-        btnDelete = (Button) findViewById(R.id.btn_delete);
+        btnGet = findViewById(R.id.btn_get);
+        btnPost = findViewById(R.id.btn_post);
+        btnPut = findViewById(R.id.btn_put);
+        btnDelete = findViewById(R.id.btn_delete);
         btnGet.setOnClickListener(this);
         btnPost.setOnClickListener(this);
         btnPut.setOnClickListener(this);

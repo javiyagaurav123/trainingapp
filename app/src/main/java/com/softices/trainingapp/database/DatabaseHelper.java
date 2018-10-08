@@ -1,4 +1,4 @@
-package com.softices.trainingapp;
+package com.softices.trainingapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -69,7 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             contentValues.put(COLUMN_USER_EMAIL, appModel.getUserEmail());
             contentValues.put(COLUMN_USER_PASSWORD, appModel.getUserPassword());
             contentValues.put(COLUMN_USER_MOBILENUMBER, appModel.getUserNumber());
-            //insert data into demailatabase
+            //insert data into Userdatabase
             db.insert(TABLE_USER, null, contentValues);
             db.close();
             return true;
@@ -106,11 +106,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public AppModel getRecord() {
         database = getReadableDatabase();
         Cursor cursor = database.rawQuery("select * from user", null);
-//        UserDataActivity userDataActivity = null;
         AppModel appModel = null;
         if (cursor.moveToFirst()) {
             for (int i = 0; i < cursor.getCount(); i++) {
-//                userDataActivity = new UserDataActivity();
                 appModel = new AppModel();
                 appModel.setUserName(cursor.getString(0));
                 appModel.setUserEmail(cursor.getString(1));

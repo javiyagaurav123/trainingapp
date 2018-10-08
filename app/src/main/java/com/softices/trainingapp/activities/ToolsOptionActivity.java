@@ -21,17 +21,15 @@ public class ToolsOptionActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_tools_option);
 
         init();
-
     }
 
     @Override
     public void onClick(View v) {
-
         if (v == imageContact) {
             Intent intent = new Intent(ToolsOptionActivity.this, AllContactActivity.class);
             startActivity(intent);
         } else if (v == imageUerList) {
-            Intent intent = new Intent(ToolsOptionActivity.this, ListofUserActivity.class);
+            Intent intent = new Intent(ToolsOptionActivity.this, UserListActivity.class);
             startActivity(intent);
         } else if (v == imageWebServices) {
             Intent intent = new Intent(ToolsOptionActivity.this, WebServiceActivity.class);
@@ -51,11 +49,11 @@ public class ToolsOptionActivity extends AppCompatActivity implements View.OnCli
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
         imageContact = findViewById(R.id.ic_contact);
         imageUerList = findViewById(R.id.ic_list_user);
         imageWebServices = findViewById(R.id.ic_web_service);
         imageBroadcastRecever = findViewById(R.id.ic_broadcast_recever);
+        
         imageContact.setOnClickListener(this);
         imageBroadcastRecever.setOnClickListener(this);
         imageUerList.setOnClickListener(this);

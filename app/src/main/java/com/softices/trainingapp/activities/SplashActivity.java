@@ -26,8 +26,8 @@ public class SplashActivity extends AppCompatActivity {
     RelativeLayout imageSplash;
     RelativeLayout layout_logo;
     Animation left_to_right;
-    @Override
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
@@ -48,7 +48,6 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 handler.post(runnable);
-
             }
         }, 50000, 10000);
     }
@@ -74,11 +73,6 @@ public class SplashActivity extends AppCompatActivity {
             }
 
         }, 2500);
-    }
-
-    @Override
-    public void onBackPressed() {
-
     }
 
     public void init() {

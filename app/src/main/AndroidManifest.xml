@@ -49,7 +49,7 @@
             android:theme="@style/AppTheme.PopupOverlay" />
         <activity android:name=".activities.ServicesActivity" />
         <activity
-            android:name=".activities.ListofUserActivity"
+            android:name=".activities.UserListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.PopupOverlay" />
 

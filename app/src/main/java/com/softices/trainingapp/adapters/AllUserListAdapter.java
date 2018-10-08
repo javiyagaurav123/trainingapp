@@ -2,7 +2,6 @@ package com.softices.trainingapp.adapters;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,13 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
-import com.softices.trainingapp.DatabaseHelper;
+import com.softices.trainingapp.database.DatabaseHelper;
 import com.softices.trainingapp.R;
-import com.softices.trainingapp.activities.ToolsOptionActivity;
 import com.softices.trainingapp.model.AppModel;
 
 import java.util.List;
@@ -34,7 +31,7 @@ public class AllUserListAdapter extends RecyclerView.Adapter<AllUserListAdapter.
     @NonNull
     @Override
     public AllUserListAdapter.UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemview = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_listof_user,
+        View itemview = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_user_list,
                 parent, false);
         return new UserViewHolder(itemview);
     }

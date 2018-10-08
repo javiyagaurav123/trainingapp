@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.softices.trainingapp.DatabaseHelper;
+import com.softices.trainingapp.database.DatabaseHelper;
 import com.softices.trainingapp.R;
 import com.softices.trainingapp.model.AppModel;
 
@@ -23,7 +23,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     public static final String password = "passwordkey";
     public static final String Email = "emailkey";
-    public static final String MyPreferences = "Mypreferences";
+//    public static final String MyPreferences = "Mypreferences";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

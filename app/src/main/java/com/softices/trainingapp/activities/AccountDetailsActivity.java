@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.softices.trainingapp.DatabaseHelper;
+import com.softices.trainingapp.database.DatabaseHelper;
 import com.softices.trainingapp.R;
 import com.softices.trainingapp.model.AppModel;
 
@@ -27,7 +27,6 @@ public class AccountDetailsActivity extends AppCompatActivity implements View.On
         setContentView(R.layout.activity_account_details);
 
         init();
-
         displayUserData();
         updateDataDisplay();
     }
@@ -38,7 +37,7 @@ public class AccountDetailsActivity extends AppCompatActivity implements View.On
             case R.id.btn_update_user:
                 Intent intent = new Intent(AccountDetailsActivity.this, UpdateActivity.class);
                 startActivity(intent);
-                break;
+                finish();
         }
     }
 

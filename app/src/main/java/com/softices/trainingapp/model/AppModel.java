@@ -7,16 +7,8 @@ public class AppModel {
     private String UserEmail;
     private String UserNumber;
     private String UserPassword;
-    private String ContactImage;
+    private String ContactNumber;
 
-
-    public String getContactImage() {
-        return ContactImage;
-    }
-
-    public void setContactImage(String contactImage) {
-        this.ContactImage = contactImage;
-    }
 
     public String getContactName() {
         return ContactName;
@@ -24,6 +16,14 @@ public class AppModel {
 
     public void setContactName(String contactName) {
         ContactName = contactName;
+    }
+
+    public String getContactNumber() {
+        return ContactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        ContactNumber = contactNumber;
     }
 
     public String getUserNumber() {
@@ -34,9 +34,13 @@ public class AppModel {
         UserNumber = userNumber;
     }
 
-    public String getUserName() { return UserName; }
+    public String getUserName() {
+        return UserName;
+    }
 
-    public void setUserName(String username) { UserName = username; }
+    public void setUserName(String username) {
+        UserName = username;
+    }
 
     public String getUserEmail() {
         return UserEmail;

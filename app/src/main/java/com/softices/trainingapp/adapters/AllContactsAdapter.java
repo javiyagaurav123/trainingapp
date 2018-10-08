@@ -17,14 +17,11 @@ import java.util.List;
 public class AllContactsAdapter extends RecyclerView.Adapter<AllContactsAdapter.ContactViewHolder> {
 
     private List<AppModel> appModelList;
-    //    private final View.OnClickListener imagePhoneCall;
     private Context mContext;
 
     public AllContactsAdapter(List<AppModel> appModelList, Context mContext) {
         this.appModelList = appModelList;
-//        this.imagePhoneCall = imagePhoneCall;
         this.mContext = mContext;
-
     }
 
     @NonNull
@@ -38,29 +35,27 @@ public class AllContactsAdapter extends RecyclerView.Adapter<AllContactsAdapter.
     @Override
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
         AppModel appModel = appModelList.get(position);
-
         if (appModel.getContactName() != null)
             holder.tvContactName.setText(appModel.getContactName());
         else
             holder.tvContactName.setText("N.A.");
-//        holder.tvContactNumber.setText(appModel.getContactNumber());
+        holder.tvContactNumber.setText(appModel.getContactNumber());
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return appModelList.size();
     }
-
     public static class ContactViewHolder extends RecyclerView.ViewHolder {
-        ImageView ivContactImage, ivPhoneCall;
+        ImageView ivContactImage;
         TextView tvContactName, tvContactNumber;
 
         public ContactViewHolder(View itemView) {
             super(itemView);
-//            ivPhoneCall=(ImageView) itemView.findViewById(R.id.ic_image_calling);
             ivContactImage = itemView.findViewById(R.id.iv_contact_image);
             tvContactName = itemView.findViewById(R.id.tv_Contact_Name);
-//            tvContactNumber = (TextView) itemView.findViewById(R.id.tv_Contact_number);
+            tvContactNumber = (TextView) itemView.findViewById(R.id.tv_Contact_number);
         }
     }
 }

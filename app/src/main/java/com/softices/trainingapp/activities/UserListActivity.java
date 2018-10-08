@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.softices.trainingapp.DatabaseHelper;
+import com.softices.trainingapp.database.DatabaseHelper;
 import com.softices.trainingapp.R;
 import com.softices.trainingapp.adapters.AllUserListAdapter;
 import com.softices.trainingapp.model.AppModel;
@@ -16,7 +16,7 @@ import com.softices.trainingapp.model.AppModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListofUserActivity extends AppCompatActivity {
+public class UserListActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewUsers;
     private List<AppModel> listUser;

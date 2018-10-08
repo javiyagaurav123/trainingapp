@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.softices.trainingapp.DatabaseHelper;
+import com.softices.trainingapp.database.DatabaseHelper;
 import com.softices.trainingapp.R;
 
 import static android.text.TextUtils.isEmpty;
