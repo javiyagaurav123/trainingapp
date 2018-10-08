@@ -29,9 +29,7 @@ public class ListofUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_list);
 
         init();
-
         initObject();
-
     }
 
     private void initObject() {
@@ -54,7 +52,6 @@ public class ListofUserActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
         recyclerViewUsers = findViewById(R.id.recyclerView_Users);
         databaseHelper = new DatabaseHelper(this);
     }

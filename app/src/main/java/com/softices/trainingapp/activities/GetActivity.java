@@ -36,7 +36,6 @@ public class GetActivity extends AppCompatActivity {
         dataRequest();
     }
 
-
     public void dataRequest() {
         String Url = "https://reqres.in/api/users?page=2";
 

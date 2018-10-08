@@ -28,12 +28,6 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".activities.ConnectionReceiver">
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            </intent-filter>
-        </receiver>
-
         <activity
             android:name=".activities.LoginActivity"
             android:screenOrientation="portrait"

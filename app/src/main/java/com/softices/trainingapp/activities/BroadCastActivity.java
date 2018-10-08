@@ -16,7 +16,7 @@ import com.softices.trainingapp.R;
 
 public class BroadCastActivity extends AppCompatActivity {
 
-    ProgressBar progressBarBattery;
+    ProgressBar pbBattery;
     TextView tvBatteryStatus;
     Toolbar toolbarBroadcast;
 
@@ -26,7 +26,7 @@ public class BroadCastActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
 
             int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
-            progressBarBattery.setProgress(level);
+            pbBattery.setProgress(level);
             tvBatteryStatus.setText("Battery Level:" + Integer.toString(level) + "%");
         }
     };
@@ -41,7 +41,7 @@ public class BroadCastActivity extends AppCompatActivity {
     }
 
     public void init() {
-        progressBarBattery = (ProgressBar) this.findViewById(R.id.pb_betteryindecatore);
+        pbBattery = (ProgressBar) this.findViewById(R.id.pb_betteryindecatore);
         tvBatteryStatus = (TextView) this.findViewById(R.id.tv_batterystatus);
         toolbarBroadcast = findViewById(R.id.toolbar_broadcast);
         setSupportActionBar(toolbarBroadcast);

@@ -10,7 +10,7 @@
     tools:context=".activities.ServicesActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_user_profile"
+        android:id="@+id/toolbar_services"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/Button_color"
@@ -30,14 +30,6 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/ic_btn_backimage"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:contentDescription="TODO" android:src="@drawable/ic_action_back" />
 
         <RelativeLayout
             android:layout_width="match_parent"

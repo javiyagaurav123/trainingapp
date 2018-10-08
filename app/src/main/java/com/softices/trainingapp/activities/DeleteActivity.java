@@ -4,10 +4,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -29,7 +29,6 @@ public class DeleteActivity extends AppCompatActivity {
         init();
         deleteMethod();
     }
-
 
     public void deleteMethod() {
         RequestQueue queue = Volley.newRequestQueue(this);// this = context
@@ -53,11 +52,9 @@ public class DeleteActivity extends AppCompatActivity {
         queue.add(dr);
     }
 
-
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void init(){
+    public void init() {
         toolbarDelete.findViewById(R.id.toolbar_delete);
-        setActionBar(toolbarDelete);
+        setSupportActionBar(toolbarDelete);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setDisplayShowTitleEnabled(false);
         getActionBar().setDisplayShowHomeEnabled(true);

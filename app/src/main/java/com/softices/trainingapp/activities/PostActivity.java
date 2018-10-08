@@ -37,13 +37,11 @@ public class PostActivity extends AppCompatActivity {
 
         init();
 
-//        postMethod(edtName.getText().toString(), edtDomain.getText().toString());
+//       postMethod(edtName.getText().toString(), edtDomain.getText().toString());
     }
-
 
     public void postMethod(final String name, final String domain) {
         RequestQueue queue = Volley.newRequestQueue(this);// this = context
-
         String url = "https://reqres.in/api/users";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -82,7 +80,6 @@ public class PostActivity extends AppCompatActivity {
 
             tvName.setText("name: " + name);
             tvDomain.setText("domain: " + domain);
-
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class AllContactActivity extends AppCompatActivity implements View.OnClickListener {
+public class AllContactActivity extends AppCompatActivity{
 
     RecyclerView rvContacts;
     Toolbar toobarContact;
@@ -96,12 +96,5 @@ public class AllContactActivity extends AppCompatActivity implements View.OnClic
             finish(); // close this activity and return to preview activity (if there is any)
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onClick(View v) {
-        Intent intent = new Intent(AllContactActivity.this, ToolsOptionActivity.class);
-        startActivity(intent);
-        finish();
     }
 }

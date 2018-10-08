@@ -14,7 +14,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Rational;
 import android.view.MenuItem;
 
 import com.softices.trainingapp.R;
@@ -22,7 +21,6 @@ import com.softices.trainingapp.R;
 public class CameraActivity extends AppCompatActivity {
 
     Toolbar toolbarCamera;
-
     public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
     public static final String ALLOW_KEY = "ALLOWED";
     public static final String CAMERA_PREF = "camera_pref";
@@ -37,16 +35,18 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     public void cameraMethod() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
             if (getFromPref(this, ALLOW_KEY)) {
                 showAlert();
             } else if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                     != PackageManager.PERMISSION_GRANTED) {
-                if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                        Manifest.permission.CAMERA)) {
                     showAlert();
                 } else {
-                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}
-                            , MY_PERMISSIONS_REQUEST_CAMERA);
+                    ActivityCompat.requestPermissions(this, new String[]
+                            {Manifest.permission.CAMERA}, MY_PERMISSIONS_REQUEST_CAMERA);
                 }
             }
         } else {
@@ -54,11 +54,10 @@ public class CameraActivity extends AppCompatActivity {
         }
     }
 
-    public static void saveToPreferences(Context context, String key, Boolean allowed){
-
-        SharedPreferences myPrefs=context.getSharedPreferences(CAMERA_PREF,Context.MODE_PRIVATE);
-        SharedPreferences.Editor prefsEditor=myPrefs.edit();
-        prefsEditor.putBoolean(key,allowed);
+    public static void saveToPreferences(Context context, String key, Boolean allowed) {
+        SharedPreferences myPrefs = context.getSharedPreferences(CAMERA_PREF, Context.MODE_PRIVATE);
+        SharedPreferences.Editor prefsEditor = myPrefs.edit();
+        prefsEditor.putBoolean(key, allowed);
         prefsEditor.commit();
     }
 
@@ -68,21 +67,14 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     private boolean getFromPref(CameraActivity cameraActivity, String allowKey) {
-        SharedPreferences myPrefs = getApplicationContext().getSharedPreferences(CAMERA_PREF, Context.MODE_PRIVATE);
+        SharedPreferences myPrefs = getApplicationContext().getSharedPreferences(CAMERA_PREF,
+                Context.MODE_PRIVATE);
         return (myPrefs.getBoolean(allowKey, false));
     }
 
     public static void startInstallAppDetailsActivity(final Activity context) {
         if (context == null)
             return;
-    }
-
-    public void init() {
-        toolbarCamera = findViewById(R.id.toolbar_Camera);
-        setSupportActionBar(toolbarCamera);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     @Override
@@ -102,7 +94,6 @@ public class CameraActivity extends AppCompatActivity {
         AlertDialog alertDialog = new AlertDialog.Builder(CameraActivity.this).create();
         alertDialog.setTitle("Alert");
         alertDialog.setMessage("App needs to access the Camera.");
-
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "DONT ALLOW",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
@@ -110,7 +101,6 @@ public class CameraActivity extends AppCompatActivity {
                         finish();
                     }
                 });
-
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "ALLOW",
                 new DialogInterface.OnClickListener() {
 
@@ -125,38 +115,31 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull
+            int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_CAMERA: {
                 for (int i = 0, len = permissions.length; i < len; i++) {
                     String permission = permissions[i];
-
                     if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
-                        boolean showRational=ActivityCompat.shouldShowRequestPermissionRationale(this, permission);
-
-
-                        if (showRational){
+                        boolean showRational = ActivityCompat.shouldShowRequestPermissionRationale
+                                (this, permission);
+                        if (showRational) {
                             showAlert();
-                    } else if (!showRational) {
-
-
+                        } else if (!showRational) {
+                            saveToPreferences(CameraActivity.this, ALLOW_KEY, true);
+                        }
                     }
-
                 }
             }
         }
     }
 
-}
-
     private void showSettingsAlert() {
         AlertDialog alertDialog = new AlertDialog.Builder(CameraActivity.this).create();
         alertDialog.setTitle("Alert");
         alertDialog.setMessage("App need to access the Camera");
-
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "DONT ALLOW",
                 new DialogInterface.OnClickListener() {
                     @Override
@@ -172,7 +155,14 @@ public class CameraActivity extends AppCompatActivity {
                         startInstallAppDetailsActivity(CameraActivity.this);
                     }
                 });
-
         alertDialog.show();
+    }
+
+    public void init() {
+        toolbarCamera = findViewById(R.id.toolbar_Camera);
+        setSupportActionBar(toolbarCamera);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 }

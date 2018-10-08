@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.softices.trainingapp.DatabaseHelper;
@@ -16,9 +15,8 @@ import com.softices.trainingapp.model.AppModel;
 
 public class AccountDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView ivPressBack;
     TextView tvEmail, tvName, tvPassword, tvNumber;
-    Button btnDeleteUser, btnUpdateUser;
+    Button btnUpdateUser;
     Toolbar toolbarProfile;
     DatabaseHelper databaseHelper;
     AppModel appModel;
@@ -31,28 +29,21 @@ public class AccountDetailsActivity extends AppCompatActivity implements View.On
         init();
 
         displayUserData();
-
         updateDataDisplay();
     }
 
     @Override
-    public void onClick(View v){
-        switch (v.getId()){
-//            case R.id.btn_delete_user:
-//                deleteUser();
-//                Toast.makeText(AccountDetailsActivity.this, "Your prifile has been delete.", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(AccountDetailsActivity.this, LoginActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.btn_update_user:
                 Intent intent = new Intent(AccountDetailsActivity.this, UpdateActivity.class);
                 startActivity(intent);
                 break;
         }
     }
-    public void init(){
-        toolbarProfile=findViewById(R.id.toolbar_user_profile);
+
+    public void init() {
+        toolbarProfile = findViewById(R.id.toolbar_services);
         setSupportActionBar(toolbarProfile);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -62,9 +53,7 @@ public class AccountDetailsActivity extends AppCompatActivity implements View.On
         tvName = findViewById(R.id.tv_name_profile);
         tvPassword = findViewById(R.id.tv_password_profile);
         tvNumber = findViewById(R.id.tv_number_profile);
-        btnDeleteUser = findViewById(R.id.btn_delete_user);
         btnUpdateUser = findViewById(R.id.btn_update_user);
-//        btnDeleteUser.setOnClickListener(this);
         btnUpdateUser.setOnClickListener(this);
         databaseHelper = new DatabaseHelper(this);
     }
@@ -81,11 +70,8 @@ public class AccountDetailsActivity extends AppCompatActivity implements View.On
         }
         return super.onOptionsItemSelected(item);
     }
-//    public void deleteUser() {
-//        databaseHelper.deleteRecord(appModel);
-//    }
 
-    public void displayUserData(){
+    public void displayUserData() {
         appModel = databaseHelper.getRecord();
         tvName.setText(appModel.getUserName());
         tvEmail.setText(appModel.getUserEmail());
@@ -93,7 +79,7 @@ public class AccountDetailsActivity extends AppCompatActivity implements View.On
         tvNumber.setText(String.valueOf(appModel.getUserNumber()));
     }
 
-    public void updateDataDisplay(){
+    public void updateDataDisplay() {
         appModel = databaseHelper.getRecord();
         tvName.setText(appModel.getUserName());
         tvEmail.setText(appModel.getUserEmail());

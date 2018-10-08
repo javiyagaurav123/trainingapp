@@ -25,19 +25,17 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_user_profile);
+        Toolbar toolbar = findViewById(R.id.toolbar_services);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle
+                (this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
     }
-
     private static long backPress;
 
     @Override
@@ -48,7 +46,6 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             Toast.makeText(getBaseContext(), "Press once again to exit!", Toast.LENGTH_SHORT).show();
         backPress = System.currentTimeMillis();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -89,15 +86,13 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         } else if (id == R.id.nav_sevices) {
             startActivity(new Intent(DashboardActivity.this, ServicesActivity.class));
         } else if (id == R.id.nav_share) {
-        } else if (id==R.id.nav_Camera){
-            startActivity(new Intent(DashboardActivity.this,CameraActivity.class));
+        } else if (id == R.id.nav_Camera) {
+            startActivity(new Intent(DashboardActivity.this, CameraActivity.class));
         } else if (id == R.id.nav_logout) {
-
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Are you sure?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-
                     clearSharpreference();
                     startActivity(new Intent(DashboardActivity.this, LoginActivity.class));
                     finishAffinity();

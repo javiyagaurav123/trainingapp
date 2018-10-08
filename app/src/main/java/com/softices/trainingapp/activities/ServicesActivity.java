@@ -1,19 +1,21 @@
 package com.softices.trainingapp.activities;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.softices.trainingapp.services.MyService;
 import com.softices.trainingapp.R;
+import com.softices.trainingapp.services.MyService;
 
 public class ServicesActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btn_start_services, btn_stop_services;
-    ImageView iv_Back_Image;
+    private Button btnStartServices, btnStopServices;
+    Toolbar toolbarServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,24 +27,36 @@ public class ServicesActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        if (view == btn_start_services) {
+        if (view == btnStartServices) {
             startService(new Intent(this, MyService.class));
-        } else if (view == btn_stop_services) {
+        } else if (view == btnStopServices) {
             stopService(new Intent(this, MyService.class));
-        } else if (view == iv_Back_Image) {
-            Intent intent = new Intent(ServicesActivity.this, DashboardActivity.class);
-            startActivity(intent);
-            finish();
         }
     }
 
     public void init() {
-        btn_start_services = findViewById(R.id.btn_start_services);
-        btn_stop_services = findViewById(R.id.btn_stop_services);
-        iv_Back_Image = findViewById(R.id.ic_btn_backimage);
+        toolbarServices=findViewById(R.id.toolbar_services);
+        setSupportActionBar(toolbarServices);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        btnStartServices = findViewById(R.id.btn_start_services);
+        btnStopServices = findViewById(R.id.btn_stop_services);
+        btnStartServices.setOnClickListener(this);
+        btnStopServices.setOnClickListener(this);
 
-        btn_start_services.setOnClickListener(this);
-        btn_stop_services.setOnClickListener(this);
-        iv_Back_Image.setOnClickListener(this);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

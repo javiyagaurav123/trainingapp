@@ -25,7 +25,7 @@ import java.util.Map;
 
 public class PutActivity extends AppCompatActivity {
 
-    TextView tvName, tvjob;
+    TextView tvName, tvJob;
     EditText edtName, edtJob;
     Toolbar toolbarPut;
     Button btnParseData;
@@ -78,16 +78,15 @@ public class PutActivity extends AppCompatActivity {
             String job = jsonData.getString("job");
 
             tvName.setText("Name:" + name);
-            tvjob.setText("job:" + job);
+            tvJob.setText("job:" + job);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-
     public void init() {
         tvName = findViewById(R.id.tv_name);
-        tvjob = findViewById(R.id.tv_lname);
+        tvJob = findViewById(R.id.tv_lname);
         edtName = findViewById(R.id.edt_name);
         edtJob = findViewById(R.id.edt_job);
         btnParseData = findViewById(R.id.btn_parsedata);
@@ -96,7 +95,6 @@ public class PutActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
         btnParseData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
