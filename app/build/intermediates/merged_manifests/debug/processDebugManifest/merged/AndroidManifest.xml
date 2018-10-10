@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.softices.trainingapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="27" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.Camera"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.AppBarOverlay" >
+        <activity
+            android:name="com.softices.trainingapp.activities.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.softices.trainingapp.activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.softices.trainingapp.activities.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.softices.trainingapp.activities.DashboardActivity"
+            android:label="@string/title_activity_dashboard"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity
+            android:name="com.softices.trainingapp.activities.AccountDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity android:name="com.softices.trainingapp.activities.ServicesActivity" />
+        <activity
+            android:name="com.softices.trainingapp.activities.UserListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopupOverlay" />
+
+        <service
+            android:name="com.softices.trainingapp.services.MyService"
+            android:enabled="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopupOverlay" />
+
+        <activity
+            android:name="com.softices.trainingapp.activities.AllContactActivity"
+            android:enabled="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity
+            android:name="com.softices.trainingapp.activities.ToolsOptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <!-- <activity android:name=".activities.WebServicesActivity" /> -->
+        <activity
+            android:name="com.softices.trainingapp.activities.UpdateActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity
+            android:name="com.softices.trainingapp.activities.WebServiceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity
+            android:name="com.softices.trainingapp.activities.GetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.softices.trainingapp.activities.PutActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.softices.trainingapp.activities.PostActivity" />
+        <activity android:name="com.softices.trainingapp.activities.DeleteActivity" />
+        <activity android:name="com.softices.trainingapp.activities.BroadCastActivity" />
+        <activity android:name="com.softices.trainingapp.activities.CameraActivity" />
+    </application>
+
+</manifest>

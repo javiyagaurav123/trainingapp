@@ -26,6 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public final String COLUMN_USER_EMAIL = "user_email";
     public final String COLUMN_USER_MOBILENUMBER = "user_mobileNumber";
     public final String COLUMN_USER_PASSWORD = "usre_password";
+    public final String COLUMN_USER_IMAGES = "user_image";
 
     private SQLiteDatabase database = null;
 
@@ -37,7 +38,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + COLUMN_USER_NAME + " text,"
             + COLUMN_USER_EMAIL + " text PRIMARY KEY,"
             + COLUMN_USER_MOBILENUMBER + " INTEGER,"
-            + COLUMN_USER_PASSWORD + " text )";
+            + COLUMN_USER_PASSWORD + " text,"
+            + COLUMN_USER_IMAGES + " BLOB NOT NULL)";
 
     // DROP TABLE IF EXISTS
     private String DROP_TABLE_USER = "DROP TABLE IF EXISTS" + TABLE_USER;
@@ -69,6 +71,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             contentValues.put(COLUMN_USER_EMAIL, appModel.getUserEmail());
             contentValues.put(COLUMN_USER_PASSWORD, appModel.getUserPassword());
             contentValues.put(COLUMN_USER_MOBILENUMBER, appModel.getUserNumber());
+            contentValues.put(COLUMN_USER_IMAGES, appModel.getUserImages(cursor.getString(4)));
+
             //insert data into Userdatabase
             db.insert(TABLE_USER, null, contentValues);
             db.close();
@@ -87,6 +91,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_USER_EMAIL, email);
         contentValues.put(COLUMN_USER_MOBILENUMBER, number);
         contentValues.put(COLUMN_USER_PASSWORD, password);
+//        contentValues.put(COLUMN_USER_IMAGES,images);
         db.update(TABLE_USER, contentValues, "user_email = ?", new String[]{email});
         return true;
     }
@@ -114,6 +119,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 appModel.setUserEmail(cursor.getString(1));
                 appModel.setUserNumber(cursor.getString(2));
                 appModel.setUserPassword(cursor.getString(3));
+//                appModel.getUserImages(cursor.getString(4));
                 Log.e("mye", "user email " + appModel.getUserEmail());
             }
         }
@@ -127,7 +133,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 COLUMN_USER_EMAIL,
                 COLUMN_USER_NAME,
-                COLUMN_USER_PASSWORD
+                COLUMN_USER_PASSWORD,
+                COLUMN_USER_IMAGES
         };
         // sorting orders
         String sortOrder = COLUMN_USER_NAME + " ASC";
@@ -149,8 +156,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 appModel.setUserName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
                 appModel.setUserEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
                 appModel.setUserPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
+                appModel.setUserImages(cursor.getBlob(cursor.getColumnIndex(COLUMN_USER_IMAGES)));
 //                appModel.setUserNumber(cursor.getString(cursor.getColumnIndex(COLUMN_USER_MOBILENUMBER)));
-
                 userList.add(appModel);
             } while (cursor.moveToNext());
         }
@@ -158,7 +165,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return userList;
     }
-
 
     public boolean checkUsr(String email, String password) {
         String[] columns = {

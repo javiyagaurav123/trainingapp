@@ -1,8 +1,8 @@
 package com.softices.trainingapp.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,8 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.softices.trainingapp.database.DatabaseHelper;
 import com.softices.trainingapp.R;
+import com.softices.trainingapp.database.DatabaseHelper;
 import com.softices.trainingapp.model.AppModel;
 
 public class UpdateActivity extends AppCompatActivity implements View.OnClickListener {
@@ -44,9 +44,10 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
     public void updateUser() {
         boolean updateRecord = databaseHelper.updateData
                 (edtName.getText().toString(),
-                edtMail.getText().toString(),
-                edtNumber.getText().toString(),
-                edtPassword.getText().toString());
+                        edtMail.getText().toString(),
+                        edtNumber.getText().toString(),
+                        edtPassword.getText().toString());
+
         if (updateRecord == true) {
             Toast.makeText(UpdateActivity.this, "Data Update", Toast.LENGTH_SHORT).show();
         } else {
@@ -54,7 +55,8 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    public void setUserData(){
+    public void setUserData() {
+        databaseHelper.close();
         //old information of User
         edtName.setText(appModel.getUserName());
         edtMail.setText(appModel.getUserEmail());
@@ -68,7 +70,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
         edtNumber = findViewById(R.id.edt_update_number);
         edtPassword = findViewById(R.id.edt_update_password);
         btnsavechange = findViewById(R.id.btn_update_savechange);
-        toolbarUpdateUser=findViewById(R.id.toolbar_update_user);
+        toolbarUpdateUser = findViewById(R.id.toolbar_update_user);
 
         setSupportActionBar(toolbarUpdateUser);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

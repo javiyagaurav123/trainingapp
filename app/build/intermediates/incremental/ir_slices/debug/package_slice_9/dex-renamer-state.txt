@@ -1,0 +1,4 @@
+#Tue Oct 09 12:47:00 IST 2018
+base.0=/home/sc/Desktop/workspaces/trainingapp/app/build/intermediates/transforms/dexMerger/debug/9
+path.0=classes.dex
+renamed.0=classes.dex

@@ -27,7 +27,7 @@
         android:id="@+id/Layout_tools_option"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/image"
+        android:layout_below="@+id/iv_user_profile"
         android:layout_centerInParent="true"
         app:cardCornerRadius="25dp"
         app:cardElevation="15dp">

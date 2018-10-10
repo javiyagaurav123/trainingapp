@@ -88,6 +88,5 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         db = new DatabaseHelper(this);
         btnLogin.setOnClickListener(this);
         tvSignup.setOnClickListener(this);
-        btnLogin.setOnClickListener(this);
     }
 }

@@ -36,7 +36,6 @@ public class PutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_put);
 
         init();
-//        putData(edtName.getText().toString(),"adsasdsadsa");
     }
 
     public void putData(final String name, final String job) {

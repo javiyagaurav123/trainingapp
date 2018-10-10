@@ -20,19 +20,19 @@
             android:gravity="center">
 
             <ImageView
-                android:id="@+id/image"
+                android:id="@+id/iv_user_profile"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="20dp"
                 android:layout_marginTop="20dp"
-                android:contentDescription="TODO" android:src="@drawable/logo" />
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/user_profile_image_shap"/>
 
             <android.support.v7.widget.CardView
                 android:id="@+id/Layout_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/image"
+                android:layout_below="@+id/iv_user_profile"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="25dp">
 
@@ -55,11 +55,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
                             android:layout_marginLeft="25dp"
-                            android:layout_marginRight="25dp"
                             android:layout_marginTop="20dp"
+                            android:layout_marginRight="25dp"
                             android:background="@drawable/ic_button_style"
                             android:hint="@string/hint_Name"
-                            android:inputType="" android:textAlignment="center"
+                            android:inputType=""
+                            android:textAlignment="center"
                             android:textSize="10dp" />
 
                         <EditText
@@ -68,8 +69,8 @@
                             android:layout_height="35dp"
                             android:layout_below="@id/edt_name"
                             android:layout_marginLeft="25dp"
-                            android:layout_marginRight="25dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="25dp"
                             android:background="@drawable/ic_button_style"
                             android:hint="@string/hint_Email"
                             android:inputType=""
@@ -82,8 +83,8 @@
                             android:layout_height="35dp"
                             android:layout_below="@id/edt_email"
                             android:layout_marginLeft="25dp"
-                            android:layout_marginRight="25dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="25dp"
                             android:background="@drawable/ic_button_style"
                             android:hint="@string/hint_mobile"
                             android:inputType="phone"
@@ -97,8 +98,8 @@
                             android:layout_height="35dp"
                             android:layout_below="@id/radiobtn_layout"
                             android:layout_marginLeft="25dp"
-                            android:layout_marginRight="25dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="25dp"
                             android:background="@drawable/ic_button_style"
                             android:hint="@string/hint_password"
                             android:inputType="textPassword"
@@ -137,8 +138,8 @@
                             android:layout_height="35dp"
                             android:layout_below="@id/edt_password"
                             android:layout_marginLeft="25dp"
-                            android:layout_marginRight="25dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="25dp"
                             android:background="@drawable/ic_button_style"
                             android:hint="@string/hint_confirmpassword"
                             android:inputType="textPassword"
@@ -151,10 +152,10 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/edt_confirpass"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="15dp"
                             android:layout_marginLeft="25dp"
-                            android:layout_marginRight="25dp"
                             android:layout_marginTop="25dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_marginBottom="15dp"
                             android:background="@drawable/ic_button_style"
                             android:text="@string/btn_signup"
                             android:textSize="15dp" />

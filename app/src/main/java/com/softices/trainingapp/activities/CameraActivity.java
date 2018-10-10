@@ -31,6 +31,7 @@ public class CameraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_camera);
 
         init();
+
         cameraMethod();
     }
 
@@ -56,7 +57,7 @@ public class CameraActivity extends AppCompatActivity {
 
     public static void saveToPreferences(Context context, String key, Boolean allowed) {
         SharedPreferences myPrefs = context.getSharedPreferences(CAMERA_PREF, Context.MODE_PRIVATE);
-        SharedPreferences.Editor prefsEditor = myPrefs.edit();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 SharedPreferences.Editor prefsEditor = myPrefs.edit();
         prefsEditor.putBoolean(key, allowed);
         prefsEditor.commit();
     }

@@ -1,0 +1,293 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:2:1-99:12
+INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:2:1-99:12
+INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:2:1-99:12
+INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:2:1-99:12
+MERGED from [com.android.support:design:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/ce116ae5a436749e56f286627f816ffd/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/734a44271a9607dba0decd849990d8d7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/sc/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/abdfe6111b7668d3ea52c669d44ff548/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v13:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-v13-27.1.1.aar/44ea801ccb618880ee8f1f18677c0599/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/9ee58673f77f98986cef0bab8a3d25d0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/e90067a4fdb7b244c9f15c8718145bc1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/4b5cfc2c5bd0941bfae927b211a86220/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/851e0c4a44232d2664e1f14db81f58e2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/21f2e255a86663e73ca5f51a19a4ce2c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/d617b7868900592011360ad4e1918d06/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/d589de345161f1b0b979c96ea63a37c6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/039ebb603cff376b54a76cc830e549d4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/ce0c79b204d46db17ca4edfab1217a48/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/0090e86b2907024d75038236f94ab8bb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/4622b1ca10f1bb3f2e4c22124b5642a0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/6dcaafc9ab4ab0a649ef5dd3fdfdf312/AndroidManifest.xml:2:1-11:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/sc/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/4926934a36e6b395b2b48dd099d0f85f/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/sc/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/2a11d6148e745beafe7be8c52e6b7029/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/sc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/4cd4cab1128bf595dc6340efd510616b/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /home/sc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/0a1cc807fc0e42f81b5cd2f932ae7965/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:2:1-99:12
+INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:2:1-99:12
+INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:2:1-99:12
+	package
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:3:5-39
+		INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:2:1-99:12
+		INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:2:1-99:12
+		INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:6:22-78
+uses-permission#android.permission.INTERNET
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:7:5-67
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:7:22-64
+uses-permission#android.permission.READ_CONTACTS
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:8:5-72
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:8:22-69
+uses-permission#android.permission.WRITE_CONTACTS
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:9:5-73
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:9:22-70
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:10:22-77
+uses-permission#android.permission.CAMERA
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:11:5-64
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:11:22-62
+uses-feature#android.hardware.Camera
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:13:5-15:35
+	android:required
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:15:9-33
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:14:9-47
+application
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:18:5-97:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/sc/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/abdfe6111b7668d3ea52c669d44ff548/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/sc/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/abdfe6111b7668d3ea52c669d44ff548/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/6dcaafc9ab4ab0a649ef5dd3fdfdf312/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/6dcaafc9ab4ab0a649ef5dd3fdfdf312/AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:23:9-35
+	android:label
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:21:9-41
+	android:roundIcon
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:22:9-54
+	android:icon
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:20:9-38
+	android:allowBackup
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:19:9-35
+	android:theme
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:24:9-54
+activity#com.softices.trainingapp.activities.SplashActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:25:9-34:20
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:27:13-49
+	android:theme
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:28:13-55
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:26:13-54
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:29:13-33:29
+action#android.intent.action.MAIN
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:30:17-69
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:30:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:32:17-77
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:32:27-74
+activity#com.softices.trainingapp.activities.LoginActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:36:9-40:57
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:38:13-49
+	android:windowSoftInputMode
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:40:13-54
+	android:theme
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:39:13-55
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:37:13-53
+activity#com.softices.trainingapp.activities.SignUpActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:41:9-45:57
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:43:13-49
+	android:windowSoftInputMode
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:45:13-54
+	android:theme
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:44:13-55
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:42:13-54
+activity#com.softices.trainingapp.activities.DashboardActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:46:9-50:60
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:49:13-49
+	android:label
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:48:13-61
+	android:theme
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:50:13-57
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:47:13-57
+activity#com.softices.trainingapp.activities.AccountDetailsActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:51:9-54:60
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:53:13-49
+	android:theme
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:54:13-57
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:52:13-62
+activity#com.softices.trainingapp.activities.ServicesActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:55:9-65
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:55:19-62
+activity#com.softices.trainingapp.activities.UserListActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:56:9-59:60
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:58:13-49
+	android:theme
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:59:13-57
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:57:13-56
+service#com.softices.trainingapp.services.MyService
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:61:9-66:60
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:65:13-49
+	android:enabled
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:63:13-35
+	android:exported
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:64:13-36
+	android:theme
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:66:13-57
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:62:13-47
+activity#com.softices.trainingapp.activities.AllContactActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:68:9-73:60
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:72:13-49
+	android:enabled
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:70:13-35
+	android:exported
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:71:13-36
+	android:theme
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:73:13-57
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:69:13-58
+activity#com.softices.trainingapp.activities.ToolsOptionActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:74:9-77:60
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:76:13-49
+	android:theme
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:77:13-57
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:75:13-59
+activity#com.softices.trainingapp.activities.UpdateActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:79:9-82:60
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:81:13-49
+	android:theme
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:82:13-57
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:80:13-54
+activity#com.softices.trainingapp.activities.WebServiceActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:83:9-86:60
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:85:13-49
+	android:theme
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:86:13-57
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:84:13-58
+activity#com.softices.trainingapp.activities.GetActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:87:9-89:52
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:89:13-49
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:88:13-51
+activity#com.softices.trainingapp.activities.PutActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:90:9-92:52
+	android:screenOrientation
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:92:13-49
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:91:13-51
+activity#com.softices.trainingapp.activities.PostActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:93:9-61
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:93:19-58
+activity#com.softices.trainingapp.activities.DeleteActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:94:9-63
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:94:19-60
+activity#com.softices.trainingapp.activities.BroadCastActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:95:9-66
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:95:19-63
+activity#com.softices.trainingapp.activities.CameraActivity
+ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:96:9-72
+	android:name
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml:96:19-60
+uses-sdk
+INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/ce116ae5a436749e56f286627f816ffd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/ce116ae5a436749e56f286627f816ffd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/734a44271a9607dba0decd849990d8d7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/734a44271a9607dba0decd849990d8d7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/sc/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/abdfe6111b7668d3ea52c669d44ff548/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/sc/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/abdfe6111b7668d3ea52c669d44ff548/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v13:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-v13-27.1.1.aar/44ea801ccb618880ee8f1f18677c0599/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v13:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-v13-27.1.1.aar/44ea801ccb618880ee8f1f18677c0599/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/9ee58673f77f98986cef0bab8a3d25d0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/9ee58673f77f98986cef0bab8a3d25d0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/e90067a4fdb7b244c9f15c8718145bc1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/e90067a4fdb7b244c9f15c8718145bc1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/4b5cfc2c5bd0941bfae927b211a86220/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/4b5cfc2c5bd0941bfae927b211a86220/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/851e0c4a44232d2664e1f14db81f58e2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/851e0c4a44232d2664e1f14db81f58e2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/21f2e255a86663e73ca5f51a19a4ce2c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/21f2e255a86663e73ca5f51a19a4ce2c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/d617b7868900592011360ad4e1918d06/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/d617b7868900592011360ad4e1918d06/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/d589de345161f1b0b979c96ea63a37c6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/d589de345161f1b0b979c96ea63a37c6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/039ebb603cff376b54a76cc830e549d4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/039ebb603cff376b54a76cc830e549d4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/ce0c79b204d46db17ca4edfab1217a48/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/ce0c79b204d46db17ca4edfab1217a48/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/0090e86b2907024d75038236f94ab8bb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/0090e86b2907024d75038236f94ab8bb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/4622b1ca10f1bb3f2e4c22124b5642a0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/4622b1ca10f1bb3f2e4c22124b5642a0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/6dcaafc9ab4ab0a649ef5dd3fdfdf312/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] /home/sc/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/6dcaafc9ab4ab0a649ef5dd3fdfdf312/AndroidManifest.xml:7:5-43
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/sc/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/4926934a36e6b395b2b48dd099d0f85f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/sc/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/4926934a36e6b395b2b48dd099d0f85f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/sc/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/2a11d6148e745beafe7be8c52e6b7029/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/sc/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/2a11d6148e745beafe7be8c52e6b7029/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/sc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/4cd4cab1128bf595dc6340efd510616b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/sc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/4cd4cab1128bf595dc6340efd510616b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/sc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/0a1cc807fc0e42f81b5cd2f932ae7965/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/sc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/0a1cc807fc0e42f81b5cd2f932ae7965/AndroidManifest.xml:20:5-44
+INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+		ADDED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/sc/Desktop/workspaces/trainingapp/app/src/main/AndroidManifest.xml

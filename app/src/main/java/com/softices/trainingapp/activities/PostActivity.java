@@ -36,8 +36,6 @@ public class PostActivity extends AppCompatActivity {
         setContentView(R.layout.activity_post);
 
         init();
-
-//       postMethod(edtName.getText().toString(), edtDomain.getText().toString());
     }
 
     public void postMethod(final String name, final String domain) {

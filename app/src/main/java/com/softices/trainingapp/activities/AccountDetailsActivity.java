@@ -27,8 +27,8 @@ public class AccountDetailsActivity extends AppCompatActivity implements View.On
         setContentView(R.layout.activity_account_details);
 
         init();
+
         displayUserData();
-        updateDataDisplay();
     }
 
     @Override
@@ -71,14 +71,6 @@ public class AccountDetailsActivity extends AppCompatActivity implements View.On
     }
 
     public void displayUserData() {
-        appModel = databaseHelper.getRecord();
-        tvName.setText(appModel.getUserName());
-        tvEmail.setText(appModel.getUserEmail());
-        tvPassword.setText(appModel.getUserPassword());
-        tvNumber.setText(String.valueOf(appModel.getUserNumber()));
-    }
-
-    public void updateDataDisplay() {
         appModel = databaseHelper.getRecord();
         tvName.setText(appModel.getUserName());
         tvEmail.setText(appModel.getUserEmail());

@@ -1,7 +1,6 @@
 package com.softices.trainingapp.activities;
 
 import android.content.ContentResolver;
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -11,8 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 
 import com.softices.trainingapp.R;
 import com.softices.trainingapp.adapters.AllContactsAdapter;
@@ -21,8 +18,7 @@ import com.softices.trainingapp.model.AppModel;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class AllContactActivity extends AppCompatActivity{
+public class AllContactActivity extends AppCompatActivity {
 
     RecyclerView rvContacts;
     Toolbar toobarContact;
@@ -78,7 +74,7 @@ public class AllContactActivity extends AppCompatActivity{
 
     public void init() {
         rvContacts = findViewById(R.id.rv_contact);
-        toobarContact=findViewById(R.id.toolbar_user_contact);
+        toobarContact = findViewById(R.id.toolbar_user_contact);
         setSupportActionBar(toobarContact);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

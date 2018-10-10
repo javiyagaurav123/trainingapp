@@ -6,9 +6,9 @@ public class AppModel {
     private String UserName;
     private String UserEmail;
     private String UserNumber;
+    private byte[] UserImages;
     private String UserPassword;
     private String ContactNumber;
-
 
     public String getContactName() {
         return ContactName;
@@ -56,5 +56,13 @@ public class AppModel {
 
     public void setUserPassword(String userPassword) {
         UserPassword = userPassword;
+    }
+
+    public byte[] getUserImages(String string) {
+        return UserImages;
+    }
+
+    public void setUserImages(byte[] userImages) {
+        UserImages = userImages;
     }
 }

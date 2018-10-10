@@ -31,8 +31,11 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
         holdActivity();
+
         init();
+
         processBar.setVisibility(View.VISIBLE);
         handler = new Handler();
         runnable = new Runnable() {
@@ -82,5 +85,4 @@ public class SplashActivity extends AppCompatActivity {
         left_to_right = AnimationUtils.loadAnimation(this,R.anim.lefttoright);
         imageSplash.setAnimation(left_to_right);
     }
-
 }
