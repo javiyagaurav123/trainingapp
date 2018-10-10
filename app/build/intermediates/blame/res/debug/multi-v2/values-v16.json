@@ -4,17 +4,7 @@
             "outputFile": "/home/sc/Desktop/workspaces/trainingapp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/4622b1ca10f1bb3f2e4c22124b5642a0/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/734a44271a9607dba0decd849990d8d7/res/values-v16/values-v16.xml",
+                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/4a9e7350cd75faf2e3be5e45859d1bd4/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/84080cba644f3eeac41a91919f912511/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]

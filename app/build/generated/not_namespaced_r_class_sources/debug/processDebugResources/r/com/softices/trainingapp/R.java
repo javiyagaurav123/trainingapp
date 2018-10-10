@@ -3893,7 +3893,7 @@ public final class R {
     public static final int item_touch_helper_previous_elevation=0x7f08007b;
     public static final int iv_contact_image=0x7f08007c;
     public static final int iv_image_profile=0x7f08007d;
-    public static final int iv_user_profile=0x7f08007e;
+    public static final int iv_user_profile_image=0x7f08007e;
     public static final int job=0x7f08007f;
     public static final int largeLabel=0x7f080080;
     public static final int layout_edit=0x7f080081;

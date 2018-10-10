@@ -4,7 +4,7 @@
             "outputFile": "/home/sc/Desktop/workspaces/trainingapp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
             "map": [
                 {
-                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/734a44271a9607dba0decd849990d8d7/res/values-v17/values-v17.xml",
+                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/4a9e7350cd75faf2e3be5e45859d1bd4/res/values-v17/values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,26,29,32,35,39,42,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

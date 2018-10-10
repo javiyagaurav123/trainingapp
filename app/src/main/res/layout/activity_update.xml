@@ -26,7 +26,7 @@
     </android.support.v7.widget.Toolbar>
 
     <ImageView
-        android:id="@+id/iv_user_profile"
+        android:id="@+id/iv_user_profile_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignEnd="@+id/layout_edit"
@@ -39,7 +39,7 @@
         android:id="@+id/Layout_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_user_profile"
+        android:layout_below="@+id/iv_user_profile_image"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         app:cardCornerRadius="25dp"

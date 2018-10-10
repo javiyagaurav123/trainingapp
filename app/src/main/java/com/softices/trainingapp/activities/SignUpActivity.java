@@ -1,16 +1,24 @@
 package com.softices.trainingapp.activities;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.ComponentName;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.provider.MediaStore;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,15 +31,15 @@ import com.softices.trainingapp.database.DatabaseHelper;
 import com.softices.trainingapp.model.AppModel;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
     public Button btnSignUp;
-    public ImageView ivUserProfileImage;
+    public ImageView ivUserProfile;
     public TextView tvAccount;
     public EditText edtName, edtEmail, edtMobileNumber, edtPassword, etdConfirmPassword;
     private DatabaseHelper dbHelper;
@@ -40,10 +48,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     Uri imageUri;
 
     private ArrayList<String> permissionsToRequest;
-    private ArrayList<String> getPermissionsToRejected = new ArrayList<>();
+    private ArrayList<String> permissionsRejected = new ArrayList<>();
     private ArrayList<String> permission = new ArrayList<>();
 
-    private static int ALL_PERMISSION_RESULT = 107;
+    private final static int ALL_PERMISSIONS_RESULT = 107;
+
 
     public static final String password = "passwordkey";
     public static final String Email = "emailkey";
@@ -54,6 +63,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_sign_up);
 
         init();
+
+        permission.add(Manifest.permission.CAMERA);
+        permissionsToRequest = findUnAskedPermission(permission);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+
+            if (permissionsToRequest.size() > 0)
+                requestPermissions(permissionsToRequest.toArray(new String[permissionsToRequest.size()]), ALL_PERMISSIONS_RESULT);
+        }
+
     }
 
     @Override
@@ -68,7 +87,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 startActivity(intent);
                 finish();
                 break;
-            case R.id.iv_user_profile:
+            case R.id.iv_user_profile_image:
                 startActivityForResult(getPickImageChooserIntent(), 200);
         }
     }
@@ -109,18 +128,18 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     public Intent getPickImageChooserIntent() {
+
         Uri outputFileUri = getCaptureImageOutPutUri();
 
         List<Intent> allIntents = new ArrayList<>();
         PackageManager packageManager = getPackageManager();
 
-        Intent captureintent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        List<ResolveInfo> listCam = packageManager.queryIntentActivities(captureintent, 0);
-        for (ResolveInfo resolveInfo : listCam) {
-            Intent intent = new Intent(captureintent);
-            intent.setComponent(new ComponentName(resolveInfo.activityInfo.packageName, resolveInfo.
-                    activityInfo.packageName));
-            intent.setPackage(resolveInfo.activityInfo.packageName);
+        Intent captureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        List<ResolveInfo> listCam = packageManager.queryIntentActivities(captureIntent, 0);
+        for (ResolveInfo res : listCam) {
+            Intent intent = new Intent(captureIntent);
+            intent.setComponent(new ComponentName(res.activityInfo.packageName, res.activityInfo.name));
+            intent.setPackage(res.activityInfo.packageName);
             if (outputFileUri != null) {
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
             }
@@ -138,18 +157,18 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             allIntents.add(intent);
         }
         Intent mainIntent = allIntents.get(allIntents.size() - 1);
-        for (Intent intent:allIntents){
-            if (intent.getComponent().getClassName().equals("com.android.documentui.DocumentActivity")){
-                mainIntent=intent;
+        for (Intent intent : allIntents) {
+            if (intent.getComponent().getClassName().equals("com.android.documentsui.DocumentsActivity")) {
+                mainIntent = intent;
                 break;
             }
         }
         allIntents.remove(mainIntent);
 
-        Intent chooserInten=Intent.createChooser(mainIntent,"Select Image ");
-        chooserInten.putExtra(Intent.EXTRA_INITIAL_INTENTS,allIntents.toArray(new Parcelable[allIntents.size()]));
+        Intent chooserIntent = Intent.createChooser(mainIntent, "Select Image ");
+        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, allIntents.toArray(new Parcelable[allIntents.size()]));
 
-        return chooserInten;
+        return chooserIntent;
     }
 
     private Uri getCaptureImageOutPutUri() {
@@ -164,48 +183,130 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Bitmap bitmap;
-        if (requestCode==Activity.RESULT_OK){
+        if (requestCode == Activity.RESULT_OK) {
 
-            if (getPickImageResultUri(data)!=null){
-                imageUri=getPickImageResultUri(data);
 
-                try{
-                    myBitmap=MediaStore.Images.Media.getBitmap(this.getContentResolver(),imageUri);
+            if (getPickImageResultUri(data) != null) {
+                imageUri = getPickImageResultUri(data);
 
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                try {
+                    myBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+                    myBitmap = rotateImageIfRequire(myBitmap, imageUri);
+                    myBitmap = getResizedBitmap(myBitmap, 500);
+                    ivUserProfile.setImageBitmap(myBitmap);
+
+                } catch (Exception e) {
+                    Log.e(String.valueOf(this), "onActivityresult", e);
                 }
+            } else {
+                bitmap = (Bitmap) data.getExtras().get("data");
+
+                myBitmap = bitmap;
+//                ivUserProfile = findViewById(R.id.iv_user_profile_image);
+                if (ivUserProfile != null) {
+                    ivUserProfile.setImageBitmap(myBitmap);
+                }
+                ivUserProfile.setImageBitmap(myBitmap);
             }
 
         }
     }
 
+    private static Bitmap rotateImageIfRequire(Bitmap myBitmap, Uri selectedImage) throws IOException {
 
-    public Uri getPickImageResultUri(Intent data){
-        boolean isCamera=true;
-        if (data != null){
-            String action=data.getAction();
-            isCamera= action != null && action.equals(MediaStore.ACTION_IMAGE_CAPTURE);
+        ExifInterface exifInterface = new ExifInterface(selectedImage.getPath());
+        int orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+
+        switch (orientation) {
+            case ExifInterface.ORIENTATION_ROTATE_90:
+                return rotateImage(myBitmap, 90);
+            case ExifInterface.ORIENTATION_ROTATE_180:
+                return rotateImage(myBitmap, 180);
+            case ExifInterface.ORIENTATION_ROTATE_270:
+                return rotateImage(myBitmap, 270);
+            default:
+                return myBitmap;
+        }
+    }
+
+    private static Bitmap rotateImage(Bitmap myBitmap, int degree) {
+        Matrix matrix = new Matrix();
+        matrix.postRotate(degree);
+        Bitmap rotatrImage = Bitmap.createBitmap(myBitmap, 0, 0, myBitmap.getWidth(), myBitmap.getHeight(),
+                matrix, true);
+        myBitmap.recycle();
+        return rotatrImage;
+    }
+
+    private Bitmap getResizedBitmap(Bitmap myBitmap, int maxSize) {
+
+        int width = myBitmap.getWidth();
+        int height = myBitmap.getHeight();
+
+        float bitmapRatio = (float) width / (float) height;
+        if (bitmapRatio > 0) {
+            width = maxSize;
+            height = (int) (width / bitmapRatio);
+        } else {
+            height = maxSize;
+            width = (int) (height * bitmapRatio);
+        }
+        return Bitmap.createScaledBitmap(myBitmap, width, height, true);
+    }
+
+    public Uri getPickImageResultUri(Intent data) {
+        boolean isCamera = true;
+        if (data != null) {
+            String action = data.getAction();
+            isCamera = action != null && action.equals(MediaStore.ACTION_IMAGE_CAPTURE);
         }
         return isCamera ? getCaptureImageOutPutUri() : data.getData();
     }
 
-    public void init() {
-        edtName = findViewById(R.id.edt_name);
-        edtEmail = findViewById(R.id.edt_email);
-        edtMobileNumber = findViewById(R.id.edt_mobilenumber);
-        edtPassword = findViewById(R.id.edt_password);
-        etdConfirmPassword = findViewById(R.id.edt_confirpass);
-        ivUserProfileImage = findViewById(R.id.iv_user_profile);
-        btnSignUp = findViewById(R.id.btn_singup);
-        tvAccount = findViewById(R.id.txt_account);
-        dbHelper = new DatabaseHelper(this);
-        appModel = new AppModel();
-        btnSignUp.setOnClickListener(this);
-        tvAccount.setOnClickListener(this);
-        ivUserProfileImage.setOnClickListener(this);
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putParcelable("Bitmap_uri", myBitmap);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        myBitmap = savedInstanceState.getParcelable("Bitmap_uri");
+    }
+
+    private ArrayList<String> findUnAskedPermission(ArrayList<String> wanted) {
+        ArrayList<String> result = new ArrayList<String>();
+
+        for (String permission : wanted) {
+            if (!hasPermission(permission)) {
+                result.add(permission);
+            }
+        }
+        return result;
+    }
+
+    private boolean hasPermission(String permission) {
+        if (canMakeSmores()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                return (checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED);
+            }
+        }
+        return true;
+    }
+
+    private boolean canMakeSmores() {
+        return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
+    }
+
+    private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
+        new AlertDialog.Builder(this).setMessage(message)
+                .setPositiveButton("OK", okListener)
+                .setNegativeButton("Cancel", null)
+                .create()
+                .show();
     }
 
     public void setText() {
@@ -213,5 +314,66 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         appModel.setUserEmail(edtEmail.getText().toString().trim());
         appModel.setUserNumber(edtMobileNumber.getText().toString().trim());
         appModel.setUserPassword(edtPassword.getText().toString().trim());
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+
+        switch (requestCode) {
+
+            case ALL_PERMISSIONS_RESULT:
+                for (String perms : permissionsToRequest) {
+                    if (hasPermission(perms)) {
+
+                    } else {
+
+                        permissionsRejected.add(perms);
+                    }
+                }
+
+                if (permissionsRejected.size() > 0) {
+
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        if (shouldShowRequestPermissionRationale(permissionsRejected.get(0))) {
+                            showMessageOKCancel("These permissions are mandatory for the application. Please allow access.",
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+
+                                                //Log.d("API123", "permisionrejected " + permissionsRejected.size());
+
+                                                requestPermissions(permissionsRejected.toArray(new String[permissionsRejected.size()]), ALL_PERMISSIONS_RESULT);
+                                            }
+                                        }
+                                    });
+                            return;
+                        }
+                    }
+
+                }
+
+                break;
+        }
+
+    }
+
+    public void init() {
+        edtName = findViewById(R.id.edt_name);
+        edtEmail = findViewById(R.id.edt_email);
+        edtMobileNumber = findViewById(R.id.edt_mobilenumber);
+        edtPassword = findViewById(R.id.edt_password);
+        ivUserProfile = findViewById(R.id.iv_user_profile_image);
+        etdConfirmPassword = findViewById(R.id.edt_confirpass);
+        btnSignUp = findViewById(R.id.btn_singup);
+        tvAccount = findViewById(R.id.txt_account);
+        dbHelper = new DatabaseHelper(this);
+        appModel = new AppModel();
+        btnSignUp.setOnClickListener(this);
+        tvAccount.setOnClickListener(this);
+        ivUserProfile.setOnClickListener(this);
     }
 }

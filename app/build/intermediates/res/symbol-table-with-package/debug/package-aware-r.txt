@@ -976,7 +976,7 @@ id italic
 id item_touch_helper_previous_elevation
 id iv_contact_image
 id iv_image_profile
-id iv_user_profile
+id iv_user_profile_image
 id job
 id largeLabel
 id layout_edit
