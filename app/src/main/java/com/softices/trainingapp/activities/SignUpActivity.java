@@ -26,18 +26,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.softices.trainingapp.R;
 import com.softices.trainingapp.database.DatabaseHelper;
 import com.softices.trainingapp.model.AppModel;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final String TAG="SignUpActiity";
+public static final int SELECT_PICTURE=100;
     public Button btnSignUp;
     public ImageView ivUserProfile;
     public TextView tvAccount;
@@ -52,7 +57,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private ArrayList<String> permission = new ArrayList<>();
 
     private final static int ALL_PERMISSIONS_RESULT = 107;
-
 
     public static final String password = "passwordkey";
     public static final String Email = "emailkey";
@@ -72,7 +76,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             if (permissionsToRequest.size() > 0)
                 requestPermissions(permissionsToRequest.toArray(new String[permissionsToRequest.size()]), ALL_PERMISSIONS_RESULT);
         }
-
     }
 
     @Override
@@ -88,8 +91,30 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 finish();
                 break;
             case R.id.iv_user_profile_image:
+                openImageChooser();
                 startActivityForResult(getPickImageChooserIntent(), 200);
         }
+    }
+
+//    Boolean loadImageFromDB() {
+//        try {
+//            byte[] bytes = dbHelper.getImagefromDB();
+//            dbHelper.close();
+//            // Show Image from DB in ImageView
+//            ivUserProfile.setImageBitmap(ImageUtiliti.getImage(bytes));
+//            return true;
+//        } catch (Exception e) {
+//            Log.e(TAG, "<loadImageFromDB> Error : " + e.getLocalizedMessage());
+//            dbHelper.close();
+//            return false;
+//        }
+//    }
+
+    void openImageChooser() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PICTURE);
     }
 
     private void signUp() {
@@ -98,7 +123,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         String mobileNumber = edtMobileNumber.getText().toString();
         String password = edtPassword.getText().toString();
         String confirmPaassword = etdConfirmPassword.getText().toString();
-        String getstring = getString(R.string.toast_error_name);
 
         if (name.length() < 4) {
             Toast.makeText(SignUpActivity.this, getString(R.string.toast_error_name),
@@ -125,6 +149,15 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             startActivity(intent);
             finish();
         }
+    }
+
+    private Uri getCaptureImageOutPutUri() {
+        Uri outputFileUri = null;
+        File getImage = getExternalCacheDir();
+        if (getImage != null) {
+            outputFileUri = Uri.fromFile(new File(getImage.getPath(), "profile.png"));
+        }
+        return outputFileUri;
     }
 
     public Intent getPickImageChooserIntent() {
@@ -171,46 +204,39 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         return chooserIntent;
     }
 
-    private Uri getCaptureImageOutPutUri() {
-        Uri outputFileUri = null;
-        File getImage = getExternalCacheDir();
-        if (getImage != null) {
-            outputFileUri = Uri.fromFile(new File(getImage.getPath(), "profile.png"));
-        }
-        return outputFileUri;
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Bitmap bitmap;
-        if (requestCode == Activity.RESULT_OK) {
+        if (resultCode == Activity.RESULT_OK) {
 
+            if (requestCode == SELECT_PICTURE) {
+               }
 
-            if (getPickImageResultUri(data) != null) {
-                imageUri = getPickImageResultUri(data);
+                if (getPickImageResultUri(data) != null) {
+                    imageUri = getPickImageResultUri(data);
 
-                try {
-                    myBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
-                    myBitmap = rotateImageIfRequire(myBitmap, imageUri);
-                    myBitmap = getResizedBitmap(myBitmap, 500);
-                    ivUserProfile.setImageBitmap(myBitmap);
+                    try {
+                        myBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+                        myBitmap = rotateImageIfRequire(myBitmap, imageUri);
+                        myBitmap = getResizedBitmap(myBitmap, 500);
+                        ivUserProfile.setImageBitmap(myBitmap);
 
-                } catch (Exception e) {
-                    Log.e(String.valueOf(this), "onActivityresult", e);
-                }
-            } else {
-                bitmap = (Bitmap) data.getExtras().get("data");
+                    } catch (Exception e) {
+                        Log.e(String.valueOf(this), "onActivityresult", e);
+                    }
+                } else {
+                    bitmap = (Bitmap) data.getExtras().get("data");
 
-                myBitmap = bitmap;
+                    myBitmap = bitmap;
 //                ivUserProfile = findViewById(R.id.iv_user_profile_image);
-                if (ivUserProfile != null) {
+                    if (ivUserProfile != null) {
+                        ivUserProfile.setImageBitmap(myBitmap);
+                    }
                     ivUserProfile.setImageBitmap(myBitmap);
                 }
-                ivUserProfile.setImageBitmap(myBitmap);
-            }
 
+            }
         }
-    }
 
     private static Bitmap rotateImageIfRequire(Bitmap myBitmap, Uri selectedImage) throws IOException {
 
@@ -314,6 +340,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         appModel.setUserEmail(edtEmail.getText().toString().trim());
         appModel.setUserNumber(edtMobileNumber.getText().toString().trim());
         appModel.setUserPassword(edtPassword.getText().toString().trim());
+        appModel.setUserImages(ivUserProfile.getImageMatrix().toString().getBytes());
     }
 
     @TargetApi(Build.VERSION_CODES.M)
