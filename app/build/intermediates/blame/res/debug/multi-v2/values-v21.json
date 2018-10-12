@@ -4,7 +4,7 @@
             "outputFile": "/home/sc/Desktop/workspaces/trainingapp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/4a9e7350cd75faf2e3be5e45859d1bd4/res/values-v21/values-v21.xml",
+                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1666d144eb4c80dbacd25baac76f5662/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,19,20,21,22,24,26,27,28,29,30,32,34,36,38,40,42,43,48,50,52,53,54,56,58,59,60,61,62,63,107,110,154,157,160,162,164,166,169,171,174,175,176,179,180,181,182,183,184,187,188,190,192,194,196,200,202,203,204,205,207,211,213,215,216,217,218,219,221,222,223,233,234,235,247",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,26 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/74b0cf8219bb0556926ef2e991a188fd/res/values-v21/values-v21.xml",
-                    "from": {
-                        "startLines": "2,5",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,266",
-                        "endLines": "4,5",
-                        "endColumns": "12,96",
-                        "endOffsets": "261,358"
-                    },
-                    "to": {
-                        "startLines": "169,233",
-                        "startColumns": "4,4",
-                        "startOffsets": "12807,17357",
-                        "endLines": "171,233",
-                        "endColumns": "12,96",
-                        "endOffsets": "13013,17449"
-                    }
-                },
-                {
-                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/84080cba644f3eeac41a91919f912511/res/values-v21/values-v21.xml",
+                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/62b44de89a5112c2881459bcc8cbd880/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -61,7 +42,26 @@
                     }
                 },
                 {
-                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/7b9ebf570992c564f1af84dcf43d4dce/res/values-v21/values-v21.xml",
+                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/a049bff98c4c21a60904e659ea3d1a2d/res/values-v21/values-v21.xml",
+                    "from": {
+                        "startLines": "2,5",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,266",
+                        "endLines": "4,5",
+                        "endColumns": "12,96",
+                        "endOffsets": "261,358"
+                    },
+                    "to": {
+                        "startLines": "169,233",
+                        "startColumns": "4,4",
+                        "startOffsets": "12807,17357",
+                        "endLines": "171,233",
+                        "endColumns": "12,96",
+                        "endOffsets": "13013,17449"
+                    }
+                },
+                {
+                    "source": "/home/sc/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/1b751d33b4c4fa61bb30faa0b9c76bd2/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
                         "startColumns": "4,4,4,4",

@@ -1,12 +1,15 @@
 package com.softices.trainingapp.activities;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.softices.trainingapp.database.DatabaseHelper;
@@ -15,7 +18,11 @@ import com.softices.trainingapp.model.AppModel;
 
 public class AccountDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final String TAG="UpdateActivity";
+
+
     TextView tvEmail, tvName, tvPassword, tvNumber;
+    ImageView ivUserProfileImage;
     Button btnUpdateUser;
     Toolbar toolbarProfile;
     DatabaseHelper databaseHelper;
@@ -27,7 +34,7 @@ public class AccountDetailsActivity extends AppCompatActivity implements View.On
         setContentView(R.layout.activity_account_details);
 
         init();
-
+        loadImageFromDB();
         displayUserData();
     }
 
@@ -41,13 +48,28 @@ public class AccountDetailsActivity extends AppCompatActivity implements View.On
         }
     }
 
+    Boolean loadImageFromDB(){
+        try{
+            byte[] bytes=databaseHelper.getImagefromDB();
+            databaseHelper.close();
+
+            //set image into iMage View from Database
+            ivUserProfileImage.setImageBitmap(ImageUtiliti.getImage(bytes));
+            return true;
+        }catch (Exception e) {
+            Log.e(TAG,"LoadImagefromDB" +e.getLocalizedMessage());
+            databaseHelper.close();
+            return false;
+        }
+    }
+
     public void init() {
         toolbarProfile = findViewById(R.id.toolbar_services);
         setSupportActionBar(toolbarProfile);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
+        ivUserProfileImage=findViewById(R.id.iv_user_profile_image);
         tvEmail = findViewById(R.id.tv_email_profile);
         tvName = findViewById(R.id.tv_name_profile);
         tvPassword = findViewById(R.id.tv_password_profile);

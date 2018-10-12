@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.media.Image;
 import android.util.Log;
 
 import com.softices.trainingapp.model.AppModel;
@@ -71,7 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             contentValues.put(COLUMN_USER_EMAIL, appModel.getUserEmail());
             contentValues.put(COLUMN_USER_PASSWORD, appModel.getUserPassword());
             contentValues.put(COLUMN_USER_MOBILENUMBER, appModel.getUserNumber());
-            contentValues.put(COLUMN_USER_IMAGES, appModel.getUserImages(cursor.getString(4)));
+            contentValues.put(COLUMN_USER_IMAGES,appModel.getUserImages());
 
             //insert data into Userdatabase
             db.insert(TABLE_USER, null, contentValues);
@@ -84,14 +85,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // Update record in table
-    public boolean updateData(String name, String email, String number, String password) {
+    public boolean updateData(String name, String email, String number, String password, byte[] image) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_USER_NAME, name);
         contentValues.put(COLUMN_USER_EMAIL, email);
         contentValues.put(COLUMN_USER_MOBILENUMBER, number);
         contentValues.put(COLUMN_USER_PASSWORD, password);
-//        contentValues.put(COLUMN_USER_IMAGES,images);
+        contentValues.put(COLUMN_USER_IMAGES,image);
+
         db.update(TABLE_USER, contentValues, "user_email = ?", new String[]{email});
         return true;
     }
@@ -119,7 +121,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 appModel.setUserEmail(cursor.getString(1));
                 appModel.setUserNumber(cursor.getString(2));
                 appModel.setUserPassword(cursor.getString(3));
-//                appModel.getUserImages(cursor.getString(4));
                 Log.e("mye", "user email " + appModel.getUserEmail());
             }
         }
@@ -178,5 +179,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return cursorCount > 0;
+    }
+
+    public byte[] getImagefromDB(){
+
+        Cursor cursor=database.query(true,TABLE_USER,new String[]{COLUMN_USER_IMAGES,},
+                null,null,null,null,COLUMN_USER_EMAIL+"DESC","1");
+
+        if (cursor.moveToFirst()){
+            byte[] blob=cursor.getBlob(cursor.getColumnIndex(COLUMN_USER_IMAGES));
+            cursor.close();
+            return blob;
+        }
+        cursor.close();
+        return null;
     }
 }

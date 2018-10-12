@@ -1,22 +1,32 @@
 package com.softices.trainingapp.activities;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.media.Image;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.softices.trainingapp.R;
 import com.softices.trainingapp.database.DatabaseHelper;
 import com.softices.trainingapp.model.AppModel;
 
+import java.io.IOException;
+
 public class UpdateActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final String TAG="UpdateActivity";
+
     EditText edtName, edtMail, edtNumber, edtPassword;
+    ImageView ivUserProfileImage;
     Toolbar toolbarUpdateUser;
     Button btnsavechange;
     DatabaseHelper databaseHelper;
@@ -28,6 +38,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_update);
 
         init();
+        loadImageFromDB();
         appModel = databaseHelper.getRecord();
         setUserData();
     }
@@ -41,12 +52,29 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
         finish();
     }
 
+    Boolean loadImageFromDB(){
+        try{
+            byte[] bytes=databaseHelper.getImagefromDB();
+            databaseHelper.close();
+
+            //set image into iMage View from Database
+            ivUserProfileImage.setImageBitmap(ImageUtiliti.getImage(bytes));
+            return true;
+        }catch (Exception e) {
+            Log.e(TAG,"LoadImagefromDB" +e.getLocalizedMessage());
+            databaseHelper.close();
+            return false;
+        }
+    }
+
+
     public void updateUser() {
         boolean updateRecord = databaseHelper.updateData
                 (edtName.getText().toString(),
                         edtMail.getText().toString(),
                         edtNumber.getText().toString(),
-                        edtPassword.getText().toString());
+                        edtPassword.getText().toString(),
+                        ivUserProfileImage.getImageMatrix().toString().getBytes());
 
         if (updateRecord == true) {
             Toast.makeText(UpdateActivity.this, "Data Update", Toast.LENGTH_SHORT).show();

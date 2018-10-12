@@ -28,12 +28,11 @@
         android:id="@+id/iv_user_profile_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_alignEnd="@+id/layout_edit"
-        android:layout_gravity="center"
-        android:layout_marginTop="80dp"
-        android:background="@color/Backgroundcolor"
-        android:contentDescription="TODO"
-        android:src="@drawable/ic_avatar_user" />
+        android:layout_alignStart="@+id/layout_edit"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:background="@color/Backgroundcolor" />
 
 
     <android.support.v7.widget.CardView

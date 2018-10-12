@@ -1,5 +1,7 @@
 package com.softices.trainingapp.model;
 
+import java.sql.Blob;
+
 public class AppModel {
 
     private String ContactName;
@@ -58,7 +60,7 @@ public class AppModel {
         UserPassword = userPassword;
     }
 
-    public byte[] getUserImages(String string) {
+    public byte[] getUserImages() {
         return UserImages;
     }
 
